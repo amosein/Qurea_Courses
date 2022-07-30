@@ -1,0 +1,24 @@
+q = int(input())
+result = list()
+
+for _ in range(q):
+    order = input().split()
+    if order[0] == "+":
+        i = int(order[1])
+        x = int(order[2])
+        result.insert(i - 1, x)
+        for j in result:
+            if len(result) == 0:
+                print("EMPTY")
+            else:
+                print(j, end=" ")
+        print()
+    elif order[0] == "-":
+        i = int(order[1])
+        result.pop(i-1)
+        if len(result) == 0:
+            print("EMPTY")
+        else:
+            for j in result:
+                print(j, end=" ")
+        print()
