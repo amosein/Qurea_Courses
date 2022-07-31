@@ -1,0 +1,9 @@
+# Done 100
+n, m = list(map(int, input().split()))
+stars = 0
+for _ in range(n):
+    entry = input()
+    for i in entry:
+        if i == "*":
+            stars += 1
+print(stars)
