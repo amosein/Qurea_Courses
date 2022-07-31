@@ -1,0 +1,25 @@
+# n tedade khat haye vorodi va m tedade azaye har khat
+n, m = list(map(int, input().split()))
+result = list()
+c = list()
+
+# maqadire har khat ro be sorate ye list be result ezafe mikonim
+for i in range(n * 2):
+    result.append(list(map(int, input().split())))
+
+# khoneye first mishe khate avale araye aval va second mishe khate avale araye dovom
+for i in range(n):
+    new = list()
+    first = result[i]
+    second = result[i+n]
+    # ba for avali miaim first va second o misazim
+    # ba for dovom miaim azaye on ro done done jam mikonim va ye list misazim mirizim toye c
+    for j in range(m):
+        new.append(first[j] + second[j])
+    c.append(new)
+
+# ba in dastor azaye nahyie c ro done don chap mikonim
+for k in c:
+    for l in k:
+        print(l, end=" ")
+    print()
