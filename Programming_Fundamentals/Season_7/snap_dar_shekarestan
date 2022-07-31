@@ -1,0 +1,20 @@
+# Done 100
+n, m = list(map(int, input().split()))
+regions_price = []
+travel_num = []
+final_price = 0
+
+for i in range(1, (n+m)+1):
+    if i <= n:
+        data1 = list(map(int, input().split()))
+        regions_price.append(data1)
+    else:
+        data2 = list(map(int, input().split()))
+        travel_num.append(data2)
+
+for j in travel_num:
+    line, price = j[0]-1, j[1]-1
+    amount = regions_price[line][price]
+    final_price += amount
+
+print(final_price)
