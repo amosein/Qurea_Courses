@@ -1,0 +1,12 @@
+str1 = input()
+str2 = input()
+indexes = list()
+
+for i in range(len(str1)):
+    l = len(str2) + i
+    new = str1[i:l]
+    if new == str2:
+        indexes.append(i+1)
+
+for j in indexes:
+    print(j, end=" ")
