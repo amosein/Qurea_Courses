@@ -1,0 +1,16 @@
+n = int(input())
+names = list()
+result = list()
+for _ in range(n):
+    name = input()
+    for i in name:
+        if i not in names:
+            names.append(i)
+    result.append(names)
+    names = list()
+big = 0
+for j in result:
+    if len(j) > big:
+        big = len(j)
+print(big)
+    
