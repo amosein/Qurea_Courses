@@ -1,0 +1,16 @@
+data = [0 for i in range(200)]
+q = int(input())
+
+for _ in range(q):
+    entry = input().split()
+    number = int(entry[1])
+    sign = entry[0]
+
+    if sign == "?":
+        search1 = data[number-1:number]
+        print(search1[0])
+
+    elif sign == "+":
+        search2 = data[number-1:number]
+        search2[0] += 1
+        data[number-1:number] = search2
