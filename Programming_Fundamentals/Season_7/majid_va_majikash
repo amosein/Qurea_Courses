@@ -1,0 +1,33 @@
+# vorodi ro migirim
+n = int(input())
+
+# rang haro migirim va joda mikonim
+color = list(map(int, input().split()))
+
+# ye liste 100 tayi az sefr ha misazim
+colors = [0 for i in range(100)]
+
+# ye halqe roye rang ha mizanim
+for i in color:
+
+    # ba in dastor on khoneyi ke behemon gofte ro joda mikonim va behesh yedone ezafe mikonim
+    # ba in kar indexesh hefz mishe
+    search = colors[i-1:i]
+    search[0] += 1
+    colors[i-1:i] = search
+
+# ye liste jadid misazim va min on haro migirim 
+# fqt bayad tavajo konim ke liste qabli sefr ham dasht pas sefr ro dar nazar nemigirim
+min_ = min([x for x in colors if x > 0])
+
+# hala ba min ke darim miaim hame onayi ke mesle khodesh meqdareshon min hast ro ja gozari mikonim
+# onhayiam ke sefre hamon sefr mizarim ke indexeshon hefz beshe
+colors = [x if x == min_ else 0 for x in colors]
+
+# bad ye halqe mizarim roye natije nahayi va indexesh ro migirim
+# chon az sefr shoro shode yedone ezafe mikonim ke adade nahayi ro bede
+for i in colors:
+    if i > 0 and i == min_:
+        print(colors.index(i)+1)
+        # bade residan be javabe akhar halqe ro mishkonim
+        break
