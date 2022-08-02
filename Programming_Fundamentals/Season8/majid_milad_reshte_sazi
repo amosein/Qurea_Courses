@@ -1,0 +1,15 @@
+l, r = list(map(int, input().split()))
+
+str_ = "1"
+for _ in range(r):
+    new = str()
+    if len(str_) > r:
+        break
+    else:
+        for i in str_:
+            if i == "1":
+                new += "0"
+            elif i == "0":
+                new += "1"
+        str_ += new
+print(str_[l-1:r])
