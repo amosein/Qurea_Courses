@@ -1,0 +1,35 @@
+# maqadir ro migirim va tafkik mikonim be int tabdil mikonim
+n, q = list(map(int, input().split()))
+number = list(map(int, input().split()))
+
+# result dar asl pasokhe akhare mast
+result = list()
+
+# ye halqe be tole q mizanim ke vorodi haro bgire
+for i in range(q):
+    t, l, r = list(map(int, input().split()))
+    
+    # agar dar khast az nowe aval bod miad on baze ro jam mikone
+    # bad be result ezafe mikone
+    if t == 1:
+        new = number[l-1:r]
+        result.append(sum(new))
+    
+    # agar dar khast az nowe dovom bod miad va swap mikone 
+    elif t == 2:
+        
+        # index ha chon az sefre pas az l va r yedone kam mikonim
+        l_new, r_new = l-1, r-1
+        
+        # bad az araye asli on onsore akhar ro pop mikonim
+        # khode pop ham hazf mikone va ham meqdaresh ro mide
+        last_value = number.pop(r_new)
+        
+        # az meqdare pop shode estefade mikonim va be index avale
+        # bazeh ezafe mikonim va khode insert yedone hol mide jlo
+        # hame araye haro
+        number.insert(l_new, last_value)
+
+# va dar nahayat kole etelawt ro print mikonim
+for j in result:
+    print(j)
