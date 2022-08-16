@@ -1,0 +1,34 @@
+s = input()
+p = input()
+
+
+# ba in tabe baresi mikonim ke aya be in reshte miresim ya na
+def check(s, p):
+    for i in range(len(s)):
+        x = i
+        y = str()
+        for j in range(len(p)):
+
+            # in dastor baraye ine ke tole reshte ro reawyat kone ke bishtar nashe
+            # chon error mide baraye hamin har moqe yeki bashe mikoantesh sefr
+            if x > len(s) - 1:
+                x = 0
+                y += s[x]
+                x += 1
+
+            # agar drost bashe adade dade shode on khone ro migire va jam mikone
+            else:
+                y += s[x]
+                x += 1
+
+        # bade etmame halqe check mikone ke aya yeki hasan ya na harja ke in etefaq oftad
+        # halqe ro mishkane va yes mide biron
+        if y == p:
+            return "Yes"
+            break
+
+
+if check(s, p) != "Yes":
+    print("No")
+else:
+    print("Yes")
